@@ -490,14 +490,87 @@
 		
 
 .center
+	padding-top: 75px
+	padding-bottom: 90px
+	text-align: center
 
 	h2
-		text-align: center
-		
+		margin-bottom: 70px
+
+	p
+		font-size: 22px
+		line-height: 1.8
+		margin-bottom: 50px
+
+	&__soc
+		display: flex
+		justify-content: center
+
+		a
+			position: relative
+			display: block
+			width: 50px
+			height: 50px
+			border-radius: 50%
+			transition: all .6s
+			margin-right: 10px
+
+			&::after
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				color: #fff
+				font-size: 16px
+
+			&:nth-child(1)
+				background-color: #507299
+
+				&::after
+					content: "\f189"
+					font-family: $fw
+
+				&:hover,
+				&:focus
+					background-color: #2d4056
+
+			&:nth-child(2)
+				background-color: #2d4373
+				
+				&::after
+					content: "\f39e"
+					font-family: $fw
+
+				&:hover,
+				&:focus
+					background-color: #1e2e4f
+
+			&:nth-child(3)
+				background-color: #1da1f2
+				margin-right: 0
+				
+				&::after
+					content: "\f099"
+					font-family: $fw
+
+				&:hover,
+				&:focus
+					background-color: #0967a0
 
 
 .footer
-	height: 1000px
+	background-color: rgb(36, 36, 36)
+	padding: 55px 0
+
+	&__container
+		position: relative
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+	&__logo
+		
+
 
 
 @import "page"
