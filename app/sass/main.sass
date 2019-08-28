@@ -259,6 +259,7 @@
 		font-family: $title
 
 	img
+		width: 100%
 		margin-bottom: 30px
 
 	&__list
@@ -561,15 +562,79 @@
 .footer
 	background-color: rgb(36, 36, 36)
 	padding: 55px 0
+	color: #fff
+
+	a
+		transition: all .6s
 
 	&__container
 		position: relative
 		display: flex
 		justify-content: space-between
 		align-items: center
+		flex-wrap: wrap
+
+	&__item
+		width: 32%
 
 	&__logo
-		
+		line-height: 1
+
+		img
+			float: left
+			margin-right: 15px
+
+		b
+			display: inline-block
+			text-transform: uppercase
+			font-weight: 400
+			margin-bottom: 5px
+			font-size: 18px
+
+
+		span
+			font-size: 12px
+
+	&__center
+		text-align: center
+		font-size: 16px
+
+		p
+			margin-bottom: 25px
+
+		a
+			font-size: 13px
+			color: $accent
+
+			&:hover,
+			&:focus
+				color: #fff
+
+		.btn
+			color: #fff
+			padding: 0 20px
+			height: 40px
+			line-height: 40px
+			background-color: $accent
+			font-size: 12px
+			letter-spacing: 0
+
+			&:hover,
+			&:focus
+				background-color: rgb(238, 57, 0)
+
+	&__tel
+		text-align: right
+
+		a
+			color: #fff
+			font-size: 16px
+
+			&:hover,
+			&:focus
+				color: $accent
+
+
 
 
 

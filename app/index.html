@@ -21,7 +21,7 @@
 	<header class="header">
 		<div class="header__container container">
 	
-			<a href="/" class="header__logo">Learn English<a>
+			<a href="/" class="header__logo">Learn English</a>
 
 			<button class="hamburger" type="button">
 				<span class="hamburger__box">
@@ -31,11 +31,11 @@
 
 			<nav class="nav">
 				<ul>
-					<li><a href="#about">About | О нас</a></li>
+					<li><a href="#step">About | О нас</a></li>
 					<li><a href="#teachers">Teachers | Учителя</a></li>
 					<li><a href="#reviews">Reviews | Отзывы</a></li>
-					<li><a href="#pricing">Pricing | Стоимость</a></li>
-					<li><a href="#contacts">Contacts | Контакты</a></li>
+					<li><a href="#tariffs">Pricing | Стоимость</a></li>
+					<li><a href="#center">Contacts | Контакты</a></li>
 				</ul>
 			</nav>
 
@@ -54,12 +54,12 @@
 				<br>
 				Наша эффективная методика изучения английского  - ключ к успеху.
 			</p>
-			<div class="hero__down click"><a href="#"></a></div>
+			<div class="hero__down click"><a href="#step"></a></div>
 		</div>
 	</section>
 
 
-	<section class="step">
+	<section class="step" id="step">
 		<div class="container">
 			
 			<h2>Что вы получаете в Learn English?</h2>
@@ -112,7 +112,7 @@
 	</section>
 
 
-	<section class="teachers">
+	<section class="teachers" id="teachers">
 		<div class="container">
 
 			<h2>Наши преподаватели</h2>
@@ -246,7 +246,7 @@
 	</section>
 
 
-	<section class="tariffs">
+	<section class="tariffs" id="tariffs">
 		<div class="container">
 			
 			<h2>Наши тарифы</h2>
@@ -261,7 +261,7 @@
 						<img src="img/tariffs1.jpg" alt="">
 						<p>Эффективное обучение с командой единомышленников по низким ценам в Москве!</p>
 					</div>
-					<a href="#" class="btn btn--lite">Записаться</a>
+					<a href="#" class="btn btn--lite team_open">Записаться</a>
 				</div>
 
 				<div class="tariffs__item">
@@ -272,7 +272,7 @@
 						<img src="img/tariffs2.jpg" alt="">
 						<p>Персональное обучение с носителем языка, включая возможность выезда. </p>
 					</div>
-					<a href="#" class="btn">Записаться</a>
+					<a href="#" class="btn individual_open">Записаться</a>
 				</div>
 
 				<div class="tariffs__item">
@@ -283,7 +283,7 @@
 						<img src="img/tariffs1.jpg" alt="">
 						<p>Индивидуальный курс с дополнительным обучением в команде новичков</p>
 					</div>
-					<a href="#" class="btn btn--lite">Записаться</a>
+					<a href="#" class="btn btn--lite additional_open">Записаться</a>
 				</div>
 
 			</div>
@@ -316,13 +316,13 @@
 
 			</div>
 
-			<a href="#" class="btn">Начать обучение по акции</a>		
+			<a href="#" class="btn action_open">Начать обучение по акции</a>		
 
 		</div>
 	</section>
 
 
-	<section class="reviews">
+	<section class="reviews" id="reviews">
 		<div class="container">
 			
 			<h2>Отзывы клиентов</h2>
@@ -375,7 +375,7 @@
 		</div>
 	</section>
 
-	<section class="center">
+	<section class="center" id="center">
 		<div class="container">
 			
 			<h2>Лингвистический центр Learn English</h2>
@@ -396,10 +396,26 @@
 	<footer class="footer">
 		<div class="footer__container container">
 			
-			<div class="footer__logo">
+			<div class="footer__logo footer__item">
 				<img src="img/flag.png" alt="">
-				LEARN ENGLISH
-				Language Center
+				<b>LEARN ENGLISH</b>
+				<br>
+				<span>Language Center</span>
+			</div>
+
+			<div class="footer__center footer__item">
+				<p>
+					Лингвистический центр Learn English
+					<br>
+					Москва, ул. Кантемировская 48 с.2Б
+				</p>
+				<p><a href="#" target="_blank">Политика конфиденциальности</a></p>
+				<a href="#" class="btn trial_open">Запись на пробное занятие</a>
+			</div>
+
+			<div class="footer__tel footer__item">
+				<p><a href="tel:88002000000">8 (800) 200-00-00</a></p>
+				<p><a href="tel:88002000000">8 (800) 200-00-00</a></p>
 			</div>
 
 		</div>
@@ -408,27 +424,128 @@
 
 	<!-- modal -->
 		<div class="modal" id="begin">
+			<button class="close begin_close" type="button">
+				<span></span>
+				<span></span>
+			</button>
 			<form action="sendmail.php" class="form" method="post">
-
-				<button class="close begin_close" type="button">
-					<span></span>
-					<span></span>
-				</button>
-
-				<h3>Оставьте заявку, <br>мы свяжемся с Вами</h3>
-				<input type="hidden" name="subject" value="Узнать подробнее!">
+				<h3>Заявка</h3>
+				<input type="hidden" name="subject" value="Заявка">
 
 				<div class="">
-					<input type="text" name="name" placeholder="Имя" required>
+					<input type="text" name="name" placeholder="Имя *" required>
 				</div>
 				<div class="">
-					<input type="tel" name="phone" required placeholder="Телефон">
+					<input type="email" name="mail" placeholder="Электронная почта *" required>
 				</div>
 				<div class="">
-					<button type="submit" class="btn" name="submit">Отправить</button>
+					<button type="submit" class="btn" name="submit">Отправить заявку!</button>
 				</div>
-				<p>Нажимая на кнопку, вы даете согласие <br>на обработку своих <a href="#" target="_blank">персональных данных</a></p>
+			</form>
+		</div>
 
+		<div class="modal" id="team">
+			<button class="close team_close" type="button">
+				<span></span>
+				<span></span>
+			</button>
+			<form action="sendmail.php" class="form" method="post">
+				<h3>Заявка</h3>
+				<input type="hidden" name="subject" value="Заявка КОМАНДНЫЙ">
+
+				<div class="">
+					<input type="text" name="name" placeholder="Имя *" required>
+				</div>
+				<div class="">
+					<input type="email" name="mail" placeholder="Электронная почта *" required>
+				</div>
+				<div class="">
+					<button type="submit" class="btn" name="submit">Отправить заявку!</button>
+				</div>
+			</form>
+		</div>
+
+		<div class="modal" id="individual">
+			<button class="close individual_close" type="button">
+				<span></span>
+				<span></span>
+			</button>
+			<form action="sendmail.php" class="form" method="post">
+				<h3>Заявка</h3>
+				<input type="hidden" name="subject" value="Заявка ИНДИВИДУАЛЬНЫЙ">
+
+				<div class="">
+					<input type="text" name="name" placeholder="Имя *" required>
+				</div>
+				<div class="">
+					<input type="email" name="mail" placeholder="Электронная почта *" required>
+				</div>
+				<div class="">
+					<button type="submit" class="btn" name="submit">Отправить заявку!</button>
+				</div>
+			</form>
+		</div>
+
+		<div class="modal" id="additional">
+			<button class="close additional_close" type="button">
+				<span></span>
+				<span></span>
+			</button>
+			<form action="sendmail.php" class="form" method="post">
+				<h3>Заявка</h3>
+				<input type="hidden" name="subject" value="Заявка ДОПОЛНИТЕЛЬНЫЙ">
+
+				<div class="">
+					<input type="text" name="name" placeholder="Имя *" required>
+				</div>
+				<div class="">
+					<input type="email" name="mail" placeholder="Электронная почта *" required>
+				</div>
+				<div class="">
+					<button type="submit" class="btn" name="submit">Отправить заявку!</button>
+				</div>
+			</form>
+		</div>
+
+		<div class="modal" id="action">
+			<button class="close action_close" type="button">
+				<span></span>
+				<span></span>
+			</button>
+			<form action="sendmail.php" class="form" method="post">
+				<h3>Начать обучение по акции</h3>
+				<input type="hidden" name="subject" value="Начать обучение по акции">
+
+				<div class="">
+					<input type="text" name="name" placeholder="Имя *" required>
+				</div>
+				<div class="">
+					<input type="email" name="mail" placeholder="Электронная почта *" required>
+				</div>
+				<div class="">
+					<button type="submit" class="btn" name="submit">Отправить заявку!</button>
+				</div>
+			</form>
+		</div>
+
+		<div class="modal" id="trial">
+			<button class="close trial_close" type="button">
+				<span></span>
+				<span></span>
+			</button>
+			<form action="sendmail.php" class="form" method="post">
+				<h3>Запись на пробное занятие</h3>
+				<input type="hidden" name="subject" value="Запись на пробное занятие">
+
+				<div class="">
+					<input type="text" name="name" placeholder="Имя *" required>
+				</div>
+				<div class="">
+					<input type="email" name="mail" placeholder="Электронная почта *" required>
+				</div>
+				<div class="">
+					<button type="submit" class="btn" name="submit">Отправить заявку!</button>
+				</div>
 			</form>
 		</div>
 

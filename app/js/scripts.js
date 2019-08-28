@@ -2449,8 +2449,8 @@ $(function() {
 //------------------------------гамбургер-----------------------------
   $('.hamburger').click(function() {
     $(this).toggleClass('hamburger--active');
-    $('nav').toggleClass('nav--active');
-    $('header').toggleClass('header--menu');
+    $('.nav').toggleClass('nav--active');
+    $('.header').toggleClass('header--menu');
   });
 
 //-------------------------------попандер---------------------------------------
@@ -2476,12 +2476,12 @@ $(function() {
       },
       messages: {
         name: "Введите Ваше имя",
-        phone: "Введите Ваш телефон",
+        mail: "Введите Вашу почту",
       },
       submitHandler: function(form) {
         var t = {
           name: jQuery('.form-' + index).find("input[name=name]").val(),
-          phone: jQuery('.form-' + index).find("input[name=phone]").val(),
+          mail: jQuery('.form-' + index).find("input[name=mail]").val(),
           subject: jQuery('.form-' + index).find("input[name=subject]").val()
         };
         ajaxSend('.form-' + index, t);
@@ -2515,6 +2515,10 @@ $(function() {
       }
   });
 
+  if($(this).scrollTop()>20){
+      $('.header').addClass('header--active');
+  }
+
 //-------------------------скорость якоря---------------------------------------
   $(".click").on("click","a", function (event) {
       event.preventDefault();
@@ -2522,6 +2526,16 @@ $(function() {
           top = $(id).offset().top;
       $('body,html').animate({scrollTop: top - 60}, 'slow', 'swing');
   });
-
-  
+//-------------------------скорость якоря---------------------------------------
+  $(".nav ul li").on("click","a", function (event) {
+      event.preventDefault();
+      var id  = $(this).attr('href'),
+          top = $(id).offset().top;
+      $('body,html').animate({scrollTop: top - 60}, 'slow', 'swing');
+  //--------------------закриття меню при кліку на ссилку якоря--------------------
+     $('.hamburger').removeClass('hamburger--active');
+     $('.nav').removeClass('nav--active');
+     $('.header').removeClass('header--menu');
+  });
+    
 });
