@@ -1,21 +1,60 @@
 $(function() {
 
-//----------------------------wowJS-------------------------------
-  var wow = new WOW(
-    {
-      boxClass:     'wow',      // animated element css class (default is wow)
-      animateClass: 'animated', // animation css class (default is animated)
-      offset:       0,          // distance to the element when triggering the animation (default is 0)
-      mobile:       true,       // trigger animations on mobile devices (default is true)
-      live:         true,       // act on asynchronously loaded content (default is true)
-      callback:     function(box) {
-        // the callback is fired every time an animation is started
-        // the argument that is passed in is the DOM node being animated
-      },
-      scrollContainer: null // optional scroll container selector, otherwise use window
-    }
-  );
-  wow.init();
+//------------------------------анимация-----------------------------
+  var $window = $(window);
+  var $elem = $(".step__item")
+
+  function isScrolledIntoView($elem, $window) {
+      var docViewTop = $window.scrollTop();
+      var docViewBottom = docViewTop + $window.height();
+
+      var elemTop = $elem.offset().top;
+      var elemBottom = elemTop + $elem.height();
+
+      return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+  }
+  $(document).on("scroll", function () {
+      if (isScrolledIntoView($elem, $window)) {
+          $elem.addClass("step__item--active")
+      }
+  });
+
+//------------------------------------------------
+  var $windowone = $(window);
+  var $elemone = $(".fadeIn")
+
+  function isScrolled($elemone, $windowone) {
+      var docViewTop = $windowone.scrollTop();
+      var docViewBottom = docViewTop + $windowone.height();
+
+      var elemoneTop = $elemone.offset().top;
+      var elemoneBottom = elemoneTop + $elemone.height();
+
+      return ((elemoneBottom <= docViewBottom) && (elemoneTop >= docViewTop));
+  }
+  $(document).on("scroll", function () {
+      if (isScrolled($elemone, $windowone)) {
+          $elemone.addClass("fadeIn--active")
+      }
+  });
+
+//------------------------------------------------
+  $('.h1').addClass('h1--active');
+  $('.sub-title').addClass('sub-title--active');
+
+
+
+//------------------------------modal-----------------------------
+  $('.begin_open').click(function() {
+    $('#begin').addClass('modal--active');
+    event.preventDefault();
+  });
+
+  $('.begin_close').click(function() {
+    $('#begin').removeClass('modal--active');
+    event.preventDefault();
+  });
+
 
 
 //------------------------------гамбургер-----------------------------
@@ -24,58 +63,6 @@ $(function() {
     $('.nav').toggleClass('nav--active');
     $('.header').toggleClass('header--menu');
   });
-
-//-------------------------------попандер---------------------------------------
-  $('.modal').popup({transition: 'all 0.3s'});
-
-//------------------------------------form-------------------------------------------
-  $('input[type="tel"]').mask('+0 (000) 000-00-00');
-
-  jQuery.validator.addMethod("phoneno", function(phone_number, element) {
-     return this.optional(element) || phone_number.match(/\+[0-9]{1}\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}/);
-  }, "Введите Ваш телефон");
-
-  $(".form").each(function(index, el) {
-    $(el).addClass('form-' + index);
-
-    $('.form-' + index).validate({
-      rules: {
-        phone: {
-          required: true,
-          phoneno: true
-        },
-        name: 'required',
-      },
-      messages: {
-        name: "Введите Ваше имя",
-        mail: "Введите Вашу почту",
-      },
-      submitHandler: function(form) {
-        var t = {
-          name: jQuery('.form-' + index).find("input[name=name]").val(),
-          mail: jQuery('.form-' + index).find("input[name=mail]").val(),
-          subject: jQuery('.form-' + index).find("input[name=subject]").val()
-        };
-        ajaxSend('.form-' + index, t);
-      }
-    });
-
-  });
-
-  function ajaxSend(formName, data) {
-    jQuery.ajax({
-      type: "POST",
-      url: "sendmail.php",
-      data: data,
-      success: function() {
-        $(".modal").popup("hide");
-        $("#thanks").popup("show");
-        setTimeout(function() {
-          $(formName).trigger('reset');
-        }, 2000);
-      }
-    });
-  }
 
 //----------------------------------------fixed----------------------------------
   $(window).scroll(function(){
@@ -98,6 +85,7 @@ $(function() {
           top = $(id).offset().top;
       $('body,html').animate({scrollTop: top - 60}, 'slow', 'swing');
   });
+
 //-------------------------скорость якоря---------------------------------------
   $(".nav ul li").on("click","a", function (event) {
       event.preventDefault();

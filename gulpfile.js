@@ -51,10 +51,10 @@ gulp.task('styles', function() {
 gulp.task('minjs', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',  			//----jquery
-		'app/libs/jquery.validate.js', 					//----форма
-		'app/libs/jquery.mask.min.js', 					//----форма
-		'app/libs/jquery.popupoverlay.js', 				//----модалки
-		'app/libs/animation/wow.min.js', 					//----animation
+		// 'app/libs/jquery.validate.js', 					//----форма
+		// 'app/libs/jquery.mask.min.js', 					//----форма
+		// 'app/libs/jquery.popupoverlay.js', 				//----модалки
+		// 'app/libs/animation/wow.min.js', 					//----animation
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(plumber())
@@ -68,10 +68,10 @@ gulp.task('minjs', function() {
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',  			//----jquery
-		'app/libs/jquery.validate.js', 					//----форма
-		'app/libs/jquery.mask.min.js', 					//----форма
-		'app/libs/jquery.popupoverlay.js', 				//----модалки
-		'app/libs/animation/wow.min.js', 					//----animation
+		// 'app/libs/jquery.validate.js', 					//----форма
+		// 'app/libs/jquery.mask.min.js', 					//----форма
+		// 'app/libs/jquery.popupoverlay.js', 				//----модалки
+		// 'app/libs/animation/wow.min.js', 					//----animation
 		'app/js/common.js', // Always at the end
 	])
 	.pipe(plumber())
